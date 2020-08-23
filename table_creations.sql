@@ -89,69 +89,69 @@ CREATE TABLE "flight_route" ("flight_id" integer, "route_id" integer);
 ALTER TABLE
   "passengers"
 ADD
-  FOREIGN KEY ("customer_id") REFERENCES "customers" ("customer_id");
+  FOREIGN KEY ("customer_id") REFERENCES "customers" ("customer_id") ON DELETE CASCADE;
 
 ALTER TABLE
   "passengers"
 ADD
-  FOREIGN KEY ("flight_id") REFERENCES "flights" ("flight_id");
+  FOREIGN KEY ("flight_id") REFERENCES "flights" ("flight_id") ON DELETE CASCADE;
 
 ALTER TABLE
   "passenger_status"
 ADD
-  FOREIGN KEY ("passenger_id") REFERENCES "passengers" ("passenger_id");
+  FOREIGN KEY ("passenger_id") REFERENCES "passengers" ("passenger_id") ON DELETE CASCADE;
 
 ALTER TABLE
   "passenger_baggages"
 ADD
-  FOREIGN KEY ("passenger_id") REFERENCES "passengers" ("passenger_id");
+  FOREIGN KEY ("passenger_id") REFERENCES "passengers" ("passenger_id") ON DELETE CASCADE;
 
 ALTER TABLE
   "air_crafts"
 ADD
-  FOREIGN KEY ("airline_id") REFERENCES "airlines" ("airline_id");
+  FOREIGN KEY ("airline_id") REFERENCES "airlines" ("airline_id") ON DELETE CASCADE;
 
 ALTER TABLE
   "routes"
 ADD
-  FOREIGN KEY ("air_craft_id") REFERENCES "air_crafts" ("air_craft_id");
+  FOREIGN KEY ("air_craft_id") REFERENCES "air_crafts" ("air_craft_id") ON DELETE CASCADE;
 
 ALTER TABLE
   "routes"
 ADD
-  FOREIGN KEY ("origin_airport_id") REFERENCES "airports" ("airport_id");
+  FOREIGN KEY ("origin_airport_id") REFERENCES "airports" ("airport_id") ON DELETE CASCADE;
 
 ALTER TABLE
   "routes"
 ADD
-  FOREIGN KEY ("destination_airport_id") REFERENCES "airports" ("airport_id");
+  FOREIGN KEY ("destination_airport_id") REFERENCES "airports" ("airport_id") ON DELETE CASCADE;
 
 ALTER TABLE
   "flights"
 ADD
-  FOREIGN KEY ("air_craft_id") REFERENCES "air_crafts" ("air_craft_id");
+  FOREIGN KEY ("air_craft_id") REFERENCES "air_crafts" ("air_craft_id") ON DELETE CASCADE;
 
 ALTER TABLE
   "flights"
 ADD
-  FOREIGN KEY ("pilot_id") REFERENCES "pilots" ("pilot_id");
+  FOREIGN KEY ("pilot_id") REFERENCES "pilots" ("pilot_id") ON DELETE CASCADE;
 
 ALTER TABLE
   "freight_flight_details"
 ADD
-  FOREIGN KEY ("flight_id") REFERENCES "flights" ("flight_id");
+  FOREIGN KEY ("flight_id") REFERENCES "flights" ("flight_id") ON DELETE CASCADE;
 
 ALTER TABLE
   "flight_route"
 ADD
-  FOREIGN KEY ("flight_id") REFERENCES "flights" ("flight_id");
+  FOREIGN KEY ("flight_id") REFERENCES "flights" ("flight_id") ON DELETE CASCADE;
 
 ALTER TABLE
   "flight_details"
 ADD
-  FOREIGN KEY ("flight_id") REFERENCES "flights" ("flight_id");
+  FOREIGN KEY ("flight_id") REFERENCES "flights" ("flight_id") ON DELETE CASCADE;
 
 ALTER TABLE
   "flight_route"
 ADD
-  FOREIGN KEY ("route_id") REFERENCES "routes" ("route_id");
+  FOREIGN KEY ("route_id") REFERENCES "routes" ("route_id") ON DELETE CASCADE;
